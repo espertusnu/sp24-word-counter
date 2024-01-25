@@ -13,5 +13,29 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Default Repository</name>
+            <layout>default</layout>
+            <url>https://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava-annotations -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava-annotations</artifactId>
+            <version>r03</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
