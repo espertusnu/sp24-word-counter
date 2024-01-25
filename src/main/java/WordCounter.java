@@ -15,8 +15,12 @@ public class WordCounter {
      * @param path the path to the file
      * @return the count
      * @throws IOException if the file cannot be read
+     * @throws IllegalArgumentException if the word is the empty string
      */
     public int getCountOfWordInFile(String word, Path path) throws IOException {
+        if (word.isEmpty()) {
+            throw new IllegalArgumentException("word must be at least one character");
+        }
         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
         String fileContents = String.join("\n", lines);
         return getCountOfWordInString(word, fileContents);

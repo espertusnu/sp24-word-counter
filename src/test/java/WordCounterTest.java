@@ -17,8 +17,13 @@ public class WordCounterTest {
     @Test
     public void getCountOfWordInFileThrowsExceptionForBadPath() {
         assertThrows(IOException.class,
-                () -> counter.getCountOfWordInFile("word", Paths.get(""))
-        );
+                () -> counter.getCountOfWordInFile("word", Paths.get("")));
+    }
+
+    @Test
+    public void getCountOfWordInFileThrowsExceptionForEmptyWord() {
+        assertThrows(IllegalArgumentException.class,
+                () -> counter.getCountOfWordInFile("", Paths.get("./res/sample-file.txt")));
     }
 
 }
