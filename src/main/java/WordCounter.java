@@ -8,6 +8,14 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class WordCounter {
+    /**
+     * Counts the number of times a word appears in a file.
+     *
+     * @param word the word to search for
+     * @param path the path to the file
+     * @return the count
+     * @throws IOException if the file cannot be read
+     */
     public int getCountOfWordInFile(String word, Path path) throws IOException {
         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
         String fileContents = String.join("\n", lines);
