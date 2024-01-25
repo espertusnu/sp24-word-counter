@@ -5,6 +5,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import com.google.common.annotations.VisibleForTesting;
+
 public class WordCounter {
     /**
      * Counts the number of times a word appears in a file.
@@ -17,6 +19,11 @@ public class WordCounter {
     public int getCountOfWordInFile(String word, Path path) throws IOException {
         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
         String fileContents = String.join("\n", lines);
+        return getCountOfWordInString(word, fileContents);
+    }
+
+    @VisibleForTesting
+    public int getCountOfWordInString(String word, String fileContents) {
         int count = 0;
         int index = 0;
         while (index < fileContents.length()) {
